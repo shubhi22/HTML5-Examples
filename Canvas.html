@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Canvas Example</title>
+		<script>
+			window.onload= function() {
+			//To get the canvas and the context of the canvas
+				var myCanvas=document.getElementById("myCanvas");
+				var myContext=myCanvas.getContext("2d");
+				
+				//To display the rectangle bordered by a stroke
+				myContext.fillStyle="red";
+				myContext.strokeStyle="black";
+				myContext.lineWidth=10;
+				myContext.fillRect(130,130,200,200);
+				myContext.strokeRect(130,130,200,200);
+				
+				//To create the triangle
+				myContext.beginPath();
+				
+				myContext.fillStyle="pink";
+				myContext.lineWidth=5;
+				myContext.strokeStyle="green";
+				
+				myContext.moveTo(130,130);
+				myContext.lineTo(230,10);
+				
+				myContext.lineTo(330,130);
+				myContext.closePath();
+				
+				myContext.stroke();
+				myContext.fill();
+				
+				//To display a circle
+				myContext.fillStyle="purple";
+				myContext.beginPath();
+				myContext.arc(230,80,40,0,2*Math.PI,false);
+				myContext.fill();
+				myContext.closePath();
+				
+				//To display the text in blue with a pink stroke
+				myContext.fillStyle="blue";
+				myContext.strokeStyle="pink";
+				myContext.lineWidth=1;	
+				myContext.font="bold 56px chiller";
+				myContext.fillText("Welcome Home",110,400);
+				myContext.strokeText("Welcome Home",110,400);
+				
+					
+				
+			}
+		</script>
+	</head>
+	
+	<body>
+		<canvas id="myCanvas" width="500" height="500" style="background-color:yellow;border:2px solid blue;">
+		This browser doesn't supports Canvas!!
+		</canvas>
+	</body>
+</html>	
